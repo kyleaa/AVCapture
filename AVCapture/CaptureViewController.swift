@@ -138,7 +138,9 @@ class CaptureViewController: UIViewController {
                 if let img = image {
                     UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
                     print("saved photo")
-                    self.uploadPhoto(jpegData, url: "http://10.0.1.20/upload")
+                    self.uploadPhoto(jpegData, url: "http://10.10.10.20:4000/upload")
+                    
+             
                 } else {
                     print("couldn't unwrap optional UIImage")
                 }
@@ -167,7 +169,5 @@ class CaptureViewController: UIViewController {
         }
         task.resume()
     }
-    
-
 }
 
