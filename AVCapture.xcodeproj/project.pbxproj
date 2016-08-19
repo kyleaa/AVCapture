@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2724EBFB1D2C7630008F6D04 /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724EBFA1D2C7630008F6D04 /* CameraPreviewView.swift */; };
+		2724EBFF1D2C76BA008F6D04 /* Capture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2724EBFE1D2C76BA008F6D04 /* Capture.swift */; };
+		27639D6E1D2DD58B004FEFAA /* PrettyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27639D6D1D2DD58B004FEFAA /* PrettyButton.swift */; };
 		278D4D951D29A70B00122E52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D4D941D29A70B00122E52 /* AppDelegate.swift */; };
-		278D4D971D29A70B00122E52 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D4D961D29A70B00122E52 /* ViewController.swift */; };
+		278D4D971D29A70B00122E52 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D4D961D29A70B00122E52 /* CaptureViewController.swift */; };
 		278D4D9A1D29A70B00122E52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278D4D981D29A70B00122E52 /* Main.storyboard */; };
 		278D4D9C1D29A70B00122E52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 278D4D9B1D29A70B00122E52 /* Assets.xcassets */; };
 		278D4D9F1D29A70B00122E52 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 278D4D9D1D29A70B00122E52 /* LaunchScreen.storyboard */; };
 		278D4DAA1D29A70B00122E52 /* AVCaptureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D4DA91D29A70B00122E52 /* AVCaptureTests.swift */; };
 		278D4DB51D29A70B00122E52 /* AVCaptureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D4DB41D29A70B00122E52 /* AVCaptureUITests.swift */; };
+		278D4DC31D2A8EBE00122E52 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278D4DC21D2A8EBE00122E52 /* FeedbackView.swift */; };
+		27CE5BA01D2F4C72006E61CF /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CE5B9F1D2F4C72006E61CF /* LogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2724EBFA1D2C7630008F6D04 /* CameraPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		2724EBFE1D2C76BA008F6D04 /* Capture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Capture.swift; path = ../Capture.swift; sourceTree = "<group>"; };
+		27639D6D1D2DD58B004FEFAA /* PrettyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettyButton.swift; sourceTree = "<group>"; };
 		278D4D911D29A70B00122E52 /* AVCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		278D4D941D29A70B00122E52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		278D4D961D29A70B00122E52 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		278D4D961D29A70B00122E52 /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		278D4D991D29A70B00122E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		278D4D9B1D29A70B00122E52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		278D4D9E1D29A70B00122E52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +55,8 @@
 		278D4DB01D29A70B00122E52 /* AVCaptureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVCaptureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		278D4DB41D29A70B00122E52 /* AVCaptureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureUITests.swift; sourceTree = "<group>"; };
 		278D4DB61D29A70B00122E52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		278D4DC21D2A8EBE00122E52 /* FeedbackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		27CE5B9F1D2F4C72006E61CF /* LogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +108,16 @@
 			isa = PBXGroup;
 			children = (
 				278D4D941D29A70B00122E52 /* AppDelegate.swift */,
-				278D4D961D29A70B00122E52 /* ViewController.swift */,
-				278D4D981D29A70B00122E52 /* Main.storyboard */,
 				278D4D9B1D29A70B00122E52 /* Assets.xcassets */,
-				278D4D9D1D29A70B00122E52 /* LaunchScreen.storyboard */,
+				2724EBFA1D2C7630008F6D04 /* CameraPreviewView.swift */,
+				2724EBFE1D2C76BA008F6D04 /* Capture.swift */,
+				278D4D961D29A70B00122E52 /* CaptureViewController.swift */,
+				278D4DC21D2A8EBE00122E52 /* FeedbackView.swift */,
 				278D4DA01D29A70B00122E52 /* Info.plist */,
+				278D4D9D1D29A70B00122E52 /* LaunchScreen.storyboard */,
+				278D4D981D29A70B00122E52 /* Main.storyboard */,
+				27639D6D1D2DD58B004FEFAA /* PrettyButton.swift */,
+				27CE5B9F1D2F4C72006E61CF /* LogoView.swift */,
 			);
 			path = AVCapture;
 			sourceTree = "<group>";
@@ -256,8 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				278D4D971D29A70B00122E52 /* ViewController.swift in Sources */,
+				2724EBFB1D2C7630008F6D04 /* CameraPreviewView.swift in Sources */,
+				27639D6E1D2DD58B004FEFAA /* PrettyButton.swift in Sources */,
+				278D4D971D29A70B00122E52 /* CaptureViewController.swift in Sources */,
 				278D4D951D29A70B00122E52 /* AppDelegate.swift in Sources */,
+				27CE5BA01D2F4C72006E61CF /* LogoView.swift in Sources */,
+				2724EBFF1D2C76BA008F6D04 /* Capture.swift in Sources */,
+				278D4DC31D2A8EBE00122E52 /* FeedbackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +504,7 @@
 				278D4DBB1D29A70B00122E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		278D4DBC1D29A70B00122E52 /* Build configuration list for PBXNativeTarget "AVCaptureTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +513,7 @@
 				278D4DBE1D29A70B00122E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		278D4DBF1D29A70B00122E52 /* Build configuration list for PBXNativeTarget "AVCaptureUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +522,7 @@
 				278D4DC11D29A70B00122E52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
