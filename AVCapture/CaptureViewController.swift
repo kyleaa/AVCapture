@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SwiftPhoenixClient
 
 class CaptureViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class CaptureViewController: UIViewController {
     private var captureDevice : AVCaptureDevice?
     private var imageOutput: AVCaptureStillImageOutput?
     private var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    let socket = Phoenix.Socket(domainAndPort: "10.10.10.20:4000", path: "socket", transport: "websocket")
+    var topic: String? = "camera:all"
     
     override func canBecomeFirstResponder() -> Bool {
         return true
@@ -53,6 +57,20 @@ class CaptureViewController: UIViewController {
         
         if captureDevice != nil {
             beginSession()
+        }
+        
+        socket.join(topic: topic!, message: Phoenix.Message(subject: "camera", body: "joining")) { channel in
+            let controlChannel = channel as! Phoenix.Channel
+            controlChannel.on("join") { message in
+                print("joined!")
+            }
+            controlChannel.on("capture") { message in
+                guard let message = message as? Phoenix.Message,
+                let id = message.message?["id"] else {
+                    return
+                }
+                self.capturePhoto("\(id!)")
+            }
         }
     }
     
@@ -128,7 +146,7 @@ class CaptureViewController: UIViewController {
         capturePhoto()
     }
     
-    internal func capturePhoto() {
+    internal func capturePhoto(id: String = "") {
         
         if let connection = videoConnection {
             imageOutput!.captureStillImageAsynchronouslyFromConnection(connection) { (sampleBuffer, err) in
@@ -138,7 +156,8 @@ class CaptureViewController: UIViewController {
                 if let img = image {
                     UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
                     print("saved photo")
-                    self.uploadPhoto(jpegData, url: "http://10.10.10.20:4000/upload")
+                    
+                    self.uploadPhoto(jpegData, url: "http://10.10.10.20:4000/upload", id: id)
                     
              
                 } else {
@@ -148,13 +167,18 @@ class CaptureViewController: UIViewController {
         }
     }
     
-    internal func uploadPhoto(imageData: NSData, url: String) {
+    internal func uploadPhoto(imageData: NSData, url: String, id: String) {
+        
+        let message = Phoenix.Message(message: ["id":id])
+        let payload = Phoenix.Payload(topic: topic!, event: "photo_upload", message: message)
+        socket.send(payload)
+        
         let request = NSMutableURLRequest(URL: NSURL(string: url)!)
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         let base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.init(rawValue: 0)) // encode the image
-        let params = ["image":[ "content_type": "image/jpeg", "filename":"test.jpg", "file_data": base64String]]
+        let params = ["image":[ "content_type": "image/jpeg", "id":id, "file_data": base64String]]
         
         try! request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions(rawValue: 0))
         let session = NSURLSession.sharedSession()
